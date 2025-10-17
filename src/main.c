@@ -1,5 +1,6 @@
 #include "common.h"
 #include "spaceship.h"
+#include "landingspot.h"
 
 int main(){
   
@@ -9,6 +10,10 @@ int main(){
   //create the space ship
   SpaceShip spaceShip = createSpaceShip();
 
+  //spawn landing spots
+  LandingSpot landingArr[MAX_LANDING_SPOTS];
+  initLandingSpots(landingArr);
+
   while(!WindowShouldClose()){
     
     BeginDrawing();
@@ -16,6 +21,8 @@ int main(){
       ClearBackground(BLACK);
 
       updateSpaceShip(&spaceShip);
+
+      updateLandingSpots(landingArr, &spaceShip);
 
     EndDrawing();
 

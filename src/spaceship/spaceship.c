@@ -2,7 +2,7 @@
 
 SpaceShip createSpaceShip(){
   SpaceShip ship;
-  ship.pos = (Vector2){ 0, SCREEN_HEIGHT / 2 };
+  ship.pos = (Vector2){ SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 };
   ship.size = (Vector2){ 32, 32 };
   ship.velocity = (Vector2){ 100.0f, 0 };
   ship.terminalVelocity = 200.0f;
@@ -49,7 +49,7 @@ void moveSpaceShip(SpaceShip *spaceShip){
   }
 
   //move the spaceship
-  spaceShip->pos.x += spaceShip->velocity.x * deltaTime;
+  //spaceShip->pos.x += spaceShip->velocity.x * deltaTime;
   spaceShip->pos.y += spaceShip->velocity.y * deltaTime;
 }
 
